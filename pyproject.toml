@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--maxfail=5 --disable-warnings -q"
+
+[tool.mypy]
+mypy_path = "src"
+ignore_missing_imports = true
+strict = true
+
+[tool.isort]
+profile = "black"
+
+[tool.black]
+line-length = 160
+target-version = ['py38']
+
+[tool.flake8]
+max-line-length = 160
+extend-ignore = ["E203", "W503"]
+exclude = ["__init__.py"]
+
+[project]
+name = "datasetsanity"
+version = "0.0.1"
+description = "DatasetSanity is a lightweight Python tool for performing sanity checks on machine learning datasets."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}  # adjust if different
+authors = [{name = "RiduanAziz"}]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
