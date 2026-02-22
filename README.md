@@ -9,7 +9,7 @@ It helps detect common but critical data issues—such as missing values, class 
 ![PyPI](https://img.shields.io/pypi/v/datasetsanity)
 ![Python](https://img.shields.io/pypi/pyversions/datasetsanity)
 ![License](https://img.shields.io/pypi/l/datasetsanity)
-![CI](https://github.com/RiduanAziz/datasetsanity/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/RiduanAziz/DataSetSanity-PyPi-Package/actions/workflows/ci.yml/badge.svg)
 ---
 
 ## 🚀 Why DatasetSanity?
@@ -70,18 +70,24 @@ pip install datasetsanity
 ## 🧠 Quick Start (Python API)
 
 ```python
-from DatasetSanity import DatasetSanity
 import pandas as pd
+from datasetsanity.core import DatasetSanity
 
+# Load your dataset
 df = pd.read_csv("data.csv")
 
-ds = DatasetSanity(
+# Run all sanity checks
+checker = DatasetSanity(
     df=df,
-    target="label",
-    task="classification"
+    target="label",           # your target/label column name
+    task="classification",    # "classification" or "regression"
+    imbalance_threshold=0.9,  # optional, default 0.9
+    correlation_threshold=0.95  # optional, default 0.95
 )
 
-report = ds.run()
+report = checker.run()
+
+# Print a readable summary
 report.summary()
 ```
 ---
