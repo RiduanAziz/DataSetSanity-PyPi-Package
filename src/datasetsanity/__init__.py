@@ -12,10 +12,14 @@ from .custom_exception import (
 # Optional: central logger
 from .logger import get_logger
 
+from .core import DatasetSanity, SanityReport
+
 __all__ = [
     "DatasetSanityError",
     "MissingValuesError",
     "ClassImbalanceError",
     "DataLeakageError",
     "get_logger",
+    "DatasetSanity",
+    "SanityReport",
 ]
