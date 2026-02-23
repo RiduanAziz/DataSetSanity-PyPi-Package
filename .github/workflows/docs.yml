@@ -1,0 +1,21 @@
+name: docs-ci
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'README.md'
+  pull_request:
+    branches: [main]
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: Set up Python
+              uses: actions/setup-python@v2
+              with:
+                python-version: '3.x'
+            - run: pip install mkdocs-material
+            - run: mkdocs gh-deploy --force

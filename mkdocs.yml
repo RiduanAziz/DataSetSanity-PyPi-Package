@@ -1,0 +1,69 @@
+site_name: DatasetSanity
+site_author: "Riduan Aziz"
+site_description: "DatasetSanity is a Python package that provides a comprehensive suite of sanity checks for datasets, helping data scientists and machine learning practitioners ensure the quality and integrity of their data before training models."
+
+repo_name: DataSetSanity-PyPi-Package
+repo_url: https://github.com/RiduanAziz/DataSetSanity-PyPi-Package
+
+nav:
+  - Home: index.md
+  - API Reference: APIreference.md
+
+theme:
+  name: material
+  logo: images/logo.png
+  language: en
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.sections
+    - toc.integrate
+    - search.highlight
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/RiduanAziz/DataSetSanity-PyPi-Package
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/RiduanAziz
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/riduanaziz/
+
+extra_javascript:
+  - javascript/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+markdown_extensions:
+  - admonition
+  - footnotes
+  - codehilite
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.mark
+
+plugins:
+  - search
+
+copyright: "Copyright &copy; 2026 Riduan Aziz"
